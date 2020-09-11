@@ -1,0 +1,52 @@
+<ActionBar>
+    <!--
+    Use the NavigationButton as a side-drawer button in Android
+    because ActionItems are shown on the right side of the ActionBar
+    -->
+    <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
+    <!--
+    Use the ActionItem for IOS with position set to left. Using the
+    NavigationButton as a side-drawer button in iOS is not possible,
+    because its function is to always navigate back in the application.
+    -->
+    <ActionItem icon="res://menu" android:visibility="collapsed" (tap)="onDrawerButtonTap()"
+        ios.position="left">
+    </ActionItem>
+    <Label text="Home"></Label>
+</ActionBar>
+
+<GridLayout class="page__content"  backgroundColor="#CCCCCC">
+    <!--<Label text="Ciudad Origen" ></Label>
+    <Label class="page__content-icon fas" text="&#xf015;"></Label>
+    <Label class="page__content-placeholder" text="></Label>-->
+    <ScrollView>
+        <StackLayout margin="25" verticalAlignment="center">
+
+            <StackLayout class="form" padding="25" backgroundColor="#FFFFFF">
+
+                <GridLayout rows="auto,auto">
+                    <StackLayout row="0" class="input-field">
+                        <Label text="Cantidad de Pasajeros" ></Label>
+                        <TextField class="input" hint="---" keyboardType="email"
+                            autocorrect="false" autocapitalizationType="none">
+                        </TextField>
+                    </StackLayout>
+                    <StackLayout row="1" class="input-field">
+                        <Label text="Ciudad Origen" ></Label>
+                        <TextField class="input" hint="Email" keyboardType="email"
+                            autocorrect="false" autocapitalizationType="none">
+                        </TextField>
+                    </StackLayout>
+                    <StackLayout row="2" class="input-field">
+                        <Label text="Ciudad Destino" ></Label>
+                        <TextField class="input" hint="Destino" keyboardType="email"
+                            autocorrect="false" autocapitalizationType="none">
+                        </TextField>
+                    </StackLayout>
+                </GridLayout>
+                <Button text="Buscar" (tap)="rutas()"class="btn btn-primary"></Button>
+            </StackLayout>
+        </StackLayout>
+    </ScrollView>
+
+</GridLayout>
