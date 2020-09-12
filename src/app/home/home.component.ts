@@ -4,6 +4,7 @@ import * as app from "tns-core-modules/application";
 import { RouterExtensions} from "nativescript-angular/router";
 
 
+
 @Component({
     selector: "Home",
     templateUrl: "./home.component.html"

@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { RadSideDrawer } from "nativescript-ui-sidedrawer";
 import * as app from "tns-core-modules/application";
+import { RouterExtensions} from "nativescript-angular/router";
 
 @Component({
     selector: "Search",
@@ -8,7 +9,7 @@ import * as app from "tns-core-modules/application";
 })
 export class SearchComponent implements OnInit {
 
-    constructor() {
+    constructor(private routerExtensions:RouterExtensions) {
         // Use the component constructor to inject providers.
     }
 
@@ -20,4 +21,8 @@ export class SearchComponent implements OnInit {
         const sideDrawer = <RadSideDrawer>app.getRootView();
         sideDrawer.showDrawer();
     }
+
+    salir(){
+        this.routerExtensions.navigate(["/browse"],{clearHistory: true});
+      }
 }

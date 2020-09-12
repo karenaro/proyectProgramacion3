@@ -1,10 +1,10 @@
 <ActionBar>
-    <!-- 
+    <!--
     Use the NavigationButton as a side-drawer button in Android
     because ActionItems are shown on the right side of the ActionBar
     -->
     <NavigationButton ios:visibility="collapsed" icon="res://menu" (tap)="onDrawerButtonTap()"></NavigationButton>
-    <!-- 
+    <!--
     Use the ActionItem for IOS with position set to left. Using the
     NavigationButton as a side-drawer button in iOS is not possible,
     because its function is to always navigate back in the application.
@@ -13,9 +13,27 @@
         ios.position="left">
     </ActionItem>
     <Label text="Browse"></Label>
+
+    <ActionItem
+    android.systemIcon="ic_lock_power_off"
+    android.position = "right"
+    (tap) = "salir()" text = "Salir">
+    </ActionItem>
 </ActionBar>
 
-<GridLayout class="page__content">
-    <Label class="page__content-icon far" text="&#xf1ea;"></Label>
-    <Label class="page__content-placeholder" text="<!-- Page content goes here -->"></Label>
+<GridLayout>
+    <ScrollView>
+                <StackLayout>
+                    <div class="card" style="width: 18rem;">
+                        <div class="card-body">
+                          <h5 class="card-title">Card title</h5>
+                          <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                          <a href="#" class="card-link">Card link</a>
+                          <a href="#" class="card-link">Another link</a>
+                        </div>
+                      </div>
+                </StackLayout>
+                <Button text="Siguiente" (tap)="tiquete()"class="btn btn-primary"></Button>
+    </ScrollView>
 </GridLayout>
